@@ -120,25 +120,49 @@ GitHub → Jenkins (EC2 in VPC) → S3 Bucket → CloudFront → End Users
 ---
 
 ### 7️⃣ Jenkins Installation on EC2
-
-SSH into EC2:
-```bash
-ssh -i "jenkinskey.pem" ubuntu@<your-public-ip>
+✅ Jenkins Installation on Ubuntu EC2
+Step 1: Update System
 ```
-### In EC2: Jenkinsserver
+sudo apt update && sudo apt upgrade -y
 ```
-sudo apt update
-sudo apt install openjdk-11-jdk -y
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+Step 2: Install Java (Required for Jenkins)
+Jenkins requires Java. Install OpenJDK 17 (recommended):
+```
+sudo apt install openjdk-17-jdk -y
+```
+Check if Java was installed:
+```
+java -version
+```
+Step 3: Add Jenkins Repository
+Run the following to add the Jenkins key and source list:
+```
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+```
+```
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
+```
+Step 4: Install Jenkins
+Update the package index and install Jenkins:
+```
 sudo apt update
 sudo apt install jenkins -y
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
 ```
+Step 5: Start and Enable Jenkins
+```
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+```
+
+Check status:
+```
+sudo systemctl status jenkins
+```
+Step 6:Access Jenkins Web UI
+In your browser, go to:
 ```
 http://<EC2-Public-IP>:8080
 ```
