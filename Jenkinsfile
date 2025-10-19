@@ -3,16 +3,16 @@ pipeline {
 
     environment {
         AWS_REGION           = 'ap-south-1'
-        S3_BUCKET            = 'bucket-bcci'
+        S3_BUCKET            = 's3demonstratedemo'
         AWS_ACCESS_KEY_ID     = credentials('aws-jenkins')
         AWS_SECRET_ACCESS_KEY = credentials('aws-jenkins')
-        CLOUDFRONT_DIST_ID    = 'EKFX8L2MS6EP'
+        CLOUDFRONT_DIST_ID    = 'E3V5U1WED49J12'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/yashpflutter/Capproject.git', credentialsId: 'github-jenkins'
+                git branch: 'main', url: 'https://github.com/tanmayrannavare/demonstrate.git', credentialsId: 'github-jenkins'
             }
         }
 
@@ -55,4 +55,5 @@ pipeline {
             echo 'Deployment failed. Check the logs.'
         }
     }
+
 }
