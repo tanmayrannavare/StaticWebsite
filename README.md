@@ -99,7 +99,7 @@ GitHub → Jenkins (EC2 in VPC) → S3 Bucket → CloudFront → End Users
 
 | Type | Port | Source |
 |------|------|--------|
-| SSH | 22 | 10.0.0.0/16 |
+| SSH | 22 | 0.0.0.0/16 |
 | HTTP | 80 | 10.0.0.0/16 |
 | Custom TCP | 8080 | 10.0.0.0/16 |
 
