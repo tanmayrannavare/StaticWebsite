@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCCI Team Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for the live icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">BCCI</div>
+            <div>
+                <h1>Team India Management</h1>
+                <div class="subtitle">ICC World Cup 2025 Squad</div>
+            </div>
+            <!-- Add Live Match Button -->
+            <a href="./live/index.html" class="live-button">
+                <i class="fas fa-circle live-icon"></i>
+                Live Match
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Playing XI</h2>
+        <div class="team-section">
+            <div class="player-cards" id="playingXI">
+                <!-- Playing XI will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <h2 class="section-title">Bench Players</h2>
+        <div class="bench-section">
+            <div class="bench-cards" id="benchPlayers">
+                <!-- Bench players will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Board of Control for Cricket in India &copy; 2023 | Team Management Dashboard</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
