@@ -166,6 +166,20 @@ In your browser, go to:
 ```
 http://<EC2-Public-IP>:8080
 ```
+Step 7: Unlock Jenkins
+Get the initial admin password:
+```
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+Copy the password, paste it into the browser prompt.
+
+Step 8: Finish Jenkins Setup
+Choose “Install Suggested Plugins”
+Create your admin user
+Finish setup
+
+✅ Jenkins is now installed and ready to use!
+
 
 ✅ Final Verification
 ✅ Website loads from CloudFront domain (secured with HTTPS)
