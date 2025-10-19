@@ -1,0 +1,45 @@
+{
+  "teams": [
+    {
+      "name": "India",
+      "players": [
+        { "name": "Rohit Sharma", "role": "Batsman", "isPlaying": true, "desc": "Right-handed opening batsman and captain of the Indian cricket team.", "image": "" },
+        { "name": "Virat Kohli", "role": "Batsman", "isPlaying": true, "desc": "Right-handed top-order batsman, former captain.", "image": "" },
+        { "name": "Shreyas Iyer", "role": "Batsman", "isPlaying": true, "desc": "Right-handed middle-order batsman. Strong player of spin bowling and known for accelerating the innings in middle overs.", "image": "" },
+        { "name": "Hardik Pandya", "role": "All-rounder", "isPlaying": true, "desc": "Useful seam bowling all-rounder.", "image": "" },
+        { "name": "Ravindra Jadeja", "role": "All-rounder", "isPlaying": true, "desc": "Left-handed batsman and slow left-arm orthodox bowler.", "image": "" },
+        { "name": "Ravichandran Ashwin", "role": "Bowler", "isPlaying": true, "desc": "Right-handed batsman and right-arm off-break bowler. Crafty spinner with variations and useful lower-order batting.", "image": "" },
+        { "name": "Jasprit Bumrah", "role": "Bowler", "isPlaying": true, "desc": "Right-arm fast bowler. Known for his unorthodox action, deadly yorkers, and ability to bowl in any phase of the game.", "image": "" },
+        { "name": "Mohammed Shami", "role": "Bowler", "isPlaying": true, "desc": "Right-arm fast bowler. Known for his seam position and ability to swing the ball both ways. Deadly in helpful conditions.", "image": "" },
+        { "name": "Kuldeep Yadhav", "role": "Bowler", "isPlaying": true, "desc": "Left-arm wrist spinner. Known for his variations and ability to take wickets in the middle overs. Difficult to read for batsmen.", "image": "" },
+        { "name": "KL Rahul", "role": "Wicketkeeper", "isPlaying": true, "desc": "Right-handed batsman and wicket-keeper. Known for his versatility in batting order and safe hands behind the stumps.", "image": "" },
+        { "name": "Mohammed Siraj", "role": "Bowler", "isPlaying": true, "desc": "Right-arm fast bowler. Has improved significantly in recent years with ability to swing the ball at good pace.", "image": "" },
+        { "name": "India Bowler 5", "role": "Batsman", "isPlaying": false, "desc": "Spin bowling reserve.", "image": "" },
+        { "name": "India Allrounder 3", "role": "All-rounder", "isPlaying": false, "desc": "Batting all-rounder.", "image": "" },
+        { "name": "India Keeper 2", "role": "Wicketkeeper", "isPlaying": false, "desc": "Reserve wicketkeeper.", "image": "" },
+        { "name": "India Bowler 6", "role": "Bowler", "isPlaying": false, "desc": "Extra pace option.", "image": "" }
+      ]
+    },
+    {
+      "name": "Australia",
+      "players": [
+        { "name": "Usman Khawaja", "role": "Batsman", "isPlaying": true, "desc": "A calm and technically sound opener known for his consistency and ability to anchor long innings in tough conditions.", "image": "" },
+        { "name": "Marnus Labuschagne", "role": "Batsman", "isPlaying": true, "desc": "Dependable No. 3 batsman combining solid defense and patience, often building crucial partnerships for Australia.", "image": "" },
+        { "name": "Steve Smith", "role": "Batsman", "isPlaying": true, "desc": "One of the best batsmen in world cricket, known for his unorthodox technique and match-saving performances under pressure.", "image": "" },
+        { "name": "Travis Head", "role": "Batsman", "isPlaying": true, "desc": "Aggressive left-hander who can counterattack and shift momentum with quick scoring in the middle order.", "image": "" },
+        { "name": "Cameron Green", "role": "All-rounder", "isPlaying": true, "desc": "A tall seam-bowling all-rounder offering balance with both bat and ball; contributes key runs and tight spells.", "image": "" },
+        { "name": "Beau Webster", "role": "All-rounder", "isPlaying": true, "desc": "Versatile all-rounder capable of batting in the middle order and bowling medium pace, adding depth and flexibility.", "image": "" },
+        { "name": "Pat Cummins", "role": "Bowler", "isPlaying": true, "desc": "Captain and premier fast bowler; combines express pace with accuracy and intelligent leadership on the field.", "image": "" },
+        { "name": "Mitchell Starc", "role": "Bowler", "isPlaying": true, "desc": "Left-arm pacer known for his lethal swinging yorkers and knack for striking early with the new ball.", "image": "" },
+        { "name": "Josh Hazlewood", "role": "Bowler", "isPlaying": true, "desc": "Right-arm quick known for immaculate line and length, providing reliability and control in long spells.", "image": "" },
+        { "name": "Nathan Lyon", "role": "Bowler", "isPlaying": true, "desc": "Experienced off-spinner famous for his control, bounce, and ability to turn matches with his skill on any surface.", "image": "" },
+        { "name": "Alex Carey", "role": "Wicketkeeper", "isPlaying": true, "desc": "Reliable wicketkeeper-batsman with tidy glovework and the ability to stabilize or accelerate lower-order innings.", "image": "" },
+        { "name": "Matthew Renshaw", "role": "Batsman", "isPlaying": false, "desc": "Reserve top-order batsman providing backup as an opener.", "image": "" },
+        { "name": "Scott Boland", "role": "Bowler", "isPlaying": false, "desc": "Accurate seamer who provides consistency and control as a backup pacer.", "image": "" },
+        { "name": "Aaron Hardie", "role": "All-rounder", "isPlaying": false, "desc": "Batting all-rounder capable of contributing quick runs and handy overs.", "image": "" },
+        { "name": "Josh Inglis", "role": "Wicketkeeper", "isPlaying": false, "desc": "Backup wicketkeeper and aggressive lower-order batsman.", "image": "" },
+        { "name": "Lance Morris", "role": "Bowler", "isPlaying": false, "desc": "Extra pace option with raw speed and bounce, waiting for opportunity.", "image": "" }
+      ]
+    }
+  ]
+}

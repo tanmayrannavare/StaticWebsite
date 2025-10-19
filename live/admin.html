@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Match Admin — India vs Australia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body{padding:18px}
+    .team-admin{background:#072b2f;padding:12px;border-radius:8px;margin-bottom:12px}
+    .player-row{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .player-row:last-child{border-bottom:0}
+    .player-row img{width:40px;height:40px;border-radius:6px}
+    .controls{margin-left:auto;display:flex;gap:6px}
+    select{padding:6px;border-radius:6px}
+    .login-box{max-width:420px;background:var(--card);padding:14px;border-radius:8px;margin-bottom:16px}
+    .hidden{display:none}
+    .score-admin{margin:12px 0;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px}
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <h1>Match Admin</h1>
+  <p class="subtle">Open the viewer (index.html) in another tab to see live updates.</p>
+
+  <!-- LOGIN -->
+  <div id="login-box" class="login-box">
+    <h3>Admin login</h3>
+    <div>
+      <label class="small">Username</label>
+      <input id="admin-user" type="text" value="" />
+    </div>
+    <div style="margin-top:8px">
+      <label class="small">Password</label>
+      <input id="admin-pass" type="password" value="" />
+    </div>
+    <div style="margin-top:10px">
+      <button id="login-btn" type="button">Sign in</button>
+      <span id="login-msg" class="small" style="margin-left:8px;color:#f88"></span>
+    </div>
+    <p class="small" style="margin-top:8px">Default: username <code>admin</code>, password <code>admin@123</code></p>
+  </div>
+
+  <!-- ADMIN UI (hidden until login) -->
+  <div id="admin-root" class="hidden">
+    <section class="score-admin">
+      <h3>Update Score</h3>
+      <form id="admin-score-form">
+        <div style="display:flex;gap:8px;align-items:end;flex-wrap:wrap">
+          <div>
+            <label class="small">Team</label><br/>
+            <select id="admin-score-team">
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+          <div>
+            <label class="small">Runs</label><br/>
+            <input id="admin-score-runs" type="number" min="0" value="0"/>
+          </div>
+          <div>
+            <label class="small">Wickets</label><br/>
+            <input id="admin-score-wk" type="number" min="0" value="0"/>
+          </div>
+          <div>
+            <label class="small">Overs</label><br/>
+            <input id="admin-score-overs" type="text" value="0.0"/>
+          </div>
+          <div>
+            <button type="submit">Update Score</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <div id="admin-areas">
+      <!-- rendered by admin.js -->
+    </div>
+    <div style="margin-top:12px">
+      <button id="logout-btn" type="button">Sign out</button>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
