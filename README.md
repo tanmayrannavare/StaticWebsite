@@ -108,7 +108,7 @@ GitHub → Jenkins (EC2 in VPC) → S3 Bucket → CloudFront → End Users
 ### 6️⃣ Launch Jenkins EC2 Instance
 
 1. Go to **EC2 → Launch instance**
-2. **Name:** `jenkin-server`
+2. **Name:** `jenkins-server`
 3. **AMI:** Ubuntu (latest LTS)
 4. **Key Pair:** Create new → `jenkinskey.pem`
 5. **Network settings:**
@@ -183,14 +183,14 @@ In your browser, go to:
 ```
 http://<EC2-Public-IP>:8080
 ```
-Step 7: Unlock Jenkins
+Step 8: Unlock Jenkins
 Get the initial admin password:
 ```
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Copy the password, paste it into the browser prompt.
 
-Step 8: Finish Jenkins Setup
+Step 9: Finish Jenkins Setup
 Choose “Install Suggested Plugins”
 Create your admin user
 Finish setup
@@ -269,18 +269,38 @@ You **do not need** a webhook if:
 ---
 ---
 ## 🛠️ Build Pipeline in Jenkins?
-Step: Add the GitHub Webhook
-In GitHub: go to your repository > settings > webhooks > add webhook > Payload URL > http://<your_jenkin_server_ip>/github-webhook/ > content type > application/json > ✅ Select "Just the Push event" >click Add Webhook
-### Dont forgot to add:port😄
-```
-http://<our_jenkin_server_ip>:8080/github-webhook/
-```
-chech the delivery
-now jenkins will auto-triggers when you push to GitHub
+### Step: Add GitHub Webhook
+In GitHub → your repo → **Settings > Webhooks > Add Webhook**
 
-### Pipeline
-In jenkins:
-create new item > name > click on pipeline > scroll > in trigger- click on GitHub hook trigger for GITScm polling > scroll> pipeline > Defination > Pipeline script from SCM > select scm to Git > add url "https://github.com/your_githubusername/repo_name" > Add credential > Branch Specifier > chech in github -main/master > apply/save > build now > check in console.
+- **Payload URL:**  
+  `http://<your_jenkins_server_ip>:8080/github-webhook/`
+  
+- **Content type:** `application/json`
+  
+- ✅ Select: “Just the push event”
+  
+- Click **Add Webhook**
+  
+🔄 Jenkins will now auto-trigger builds on Git push!
+### ⚠️ Make sure to include the `:8080` port in the webhook URL.
+```
+http://<your_jenkins_server_ip>:8080/github-webhook/
+```
+✅ Check the delivery. Jenkins will now auto-trigger builds when you push to GitHub.
+
+### Creating a Jenkins Pipeline
+
+1. Go to Jenkins → **New Item**
+2. Enter a name and select **Pipeline**
+3. Scroll to **Build Triggers** → Check ✅ GitHub hook trigger for GITScm polling
+4. Scroll to **Pipeline** section:
+   - Definition: `Pipeline script from SCM`
+   - SCM: `Git`
+   - Repository URL: `https://github.com/your_githubusername/repo_name`
+   - Credentials: Select GitHub credentials
+   - Branch Specifier: `*/main` or `*/master`
+5. Click **Apply** → **Save**
+6. Click **Build Now** and check the **Console Output**
 
 ---
 ✅ Final Verification
