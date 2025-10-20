@@ -268,21 +268,19 @@ You **do not need** a webhook if:
 
 ---
 ---
-## 🛠️ Should You Build First or Create the Webhook First in Jenkins?
+## 🛠️ Build Pipeline in Jenkins?
 Step: Add the GitHub Webhook
 In GitHub: go to your repository > settings > webhooks > add webhook > Payload URL > http://<your_jenkin_server_ip>/github-webhook/ > content type > application/json > ✅ Select "Just the Push event" >click Add Webhook
 
 ### Pipeline
 In jenkins:
-create new item > name > click on pipeline > scroll > in trigger- click on GitHub hook trigger for GITScm polling > scroll> pipeline > Defination > Pipeline script from SCM > select scm to Git > add url https://github.com/your_githubusername/repo_name > Add credential > Branch Specifier > chech in github -main or master > apply/save > build now > check in console
+create new item > name > click on pipeline > scroll > in trigger- click on GitHub hook trigger for GITScm polling > scroll> pipeline > Defination > Pipeline script from SCM > select scm to Git > add url "https://github.com/your_githubusername/repo_name> > Add credential" > Branch Specifier > chech in github -main or master > apply/save > build now > check in console.
 
-### dont forgot to add:port😄
+### Dont forgot to add:port😄
 chech the delivery
 now jenkins will auto-triggers when you push to GitHub
 
 ---
-
-
 ✅ Final Verification
 ✅ Website loads from CloudFront domain (secured with HTTPS)
 ✅ Jenkins pipeline auto-deploys updates from GitHub → S3 → CloudFront
