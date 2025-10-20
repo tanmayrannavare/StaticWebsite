@@ -178,7 +178,7 @@ Verify AWS CLI is installed
 ```
 aws --version
 ```
-Step 6:Access Jenkins Web UI
+Step 7:Access Jenkins Web UI
 In your browser, go to:
 ```
 http://<EC2-Public-IP>:8080
@@ -272,6 +272,9 @@ You **do not need** a webhook if:
 Step: Add the GitHub Webhook
 In GitHub: go to your repository > settings > webhooks > add webhook > Payload URL > http://<your_jenkin_server_ip>/github-webhook/ > content type > application/json > ✅ Select "Just the Push event" >click Add Webhook
 ### Dont forgot to add:port😄
+```
+http://<our_jenkin_server_ip>:8080/github-webhook/
+```
 chech the delivery
 now jenkins will auto-triggers when you push to GitHub
 
