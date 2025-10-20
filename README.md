@@ -313,3 +313,4 @@ http://<your_jenkins_server_ip>:8080/github-webhook/
 ✅ Website loads from CloudFront domain (secured with HTTPS)
 ✅ Jenkins pipeline auto-deploys updates from GitHub → S3 → CloudFront
 ✅ All AWS resources are properly configured (VPC, SG, EC2, S3, CloudFront)
+# ⚠️ Archived: This project is no longer maintained. The original infrastructure (EC2 instance) has been deleted.
