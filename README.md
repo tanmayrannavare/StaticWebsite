@@ -301,7 +301,6 @@ http://<your_jenkins_server_ip>:8080/github-webhook/
    - Branch Specifier: `*/main` or `*/master`
 5. Click **Apply** → **Save**
 6. Click **Build Now** and check the **Console Output**
-
 ---
 ✅ Final Verification
 ✅ Website loads from CloudFront domain (secured with HTTPS)
