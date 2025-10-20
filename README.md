@@ -161,6 +161,23 @@ Check status:
 ```
 sudo systemctl status jenkins
 ```
+Step 6:Download AWS CLI v2 installer
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+```
+Unzip the AWS CLI installer
+Run:
+```
+unzip awscliv2.zip
+```
+Now run the installer
+```
+sudo ./aws/install
+```
+Verify AWS CLI is installed
+```
+aws --version
+```
 Step 6:Access Jenkins Web UI
 In your browser, go to:
 ```
@@ -177,8 +194,93 @@ Step 8: Finish Jenkins Setup
 Choose “Install Suggested Plugins”
 Create your admin user
 Finish setup
-
 ✅ Jenkins is now installed and ready to use!
+
+---
+
+### 🔌 8️⃣. Install Necessary Plugins
+
+## Add Required Plugins
+1. Go to:  
+   `Manage Jenkins > Plugins > Available`
+2. Search and **tick the following plugins**:
+   - **Git Server Plugin**
+   - **AWS Credentials Plugin**
+3. Click **Install without restart**
+---
+
+
+# Credential Setup
+
+## AWS Credentials
+1. Go to: IAM > Users > [Create new or select existing user]
+2. Create Access Key
+   - Use case: CLI
+3. Download the `.csv` file with the Access Key ID and Secret Access Key
+
+## GitHub Personal Access Token (PAT)
+1. Go to: Settings > Developer Settings > Personal Access Tokens > Tokens (classic)
+2. Generate new token (or skip if it already exists)
+3. Select the required scopes
+4. Copy your PAT (this will be used as the password in Jenkins)
+
+## Add Credentials to Jenkins
+1. Go to Jenkins > Manage Jenkins > Credentials
+2. Add credentials for:
+   - **AWS** (Access Key ID + Secret Access Key)
+   - **GitHub** (Username + PAT)
+
+### AWS:
+- **Kind**: Username with password
+- **Username**: AWS Access Key ID
+- **Password**: AWS Secret Access Key
+- **ID**: e.g., aws-jenkins
+
+### GitHub:
+- **Kind**: Username with password
+- **Username**: GitHub username
+- **Password**: GitHub PAT
+- **ID**: e.g., github-jenkins
+
+---
+## ❓ Is a Webhook Necessary in Jenkins?
+
+### ✅ No – Not Always Necessary
+
+You **do not need** a webhook if:
+- You are triggering builds manually
+- You are using **polling** (Jenkins checks GitHub for changes at intervals)
+
+### ✅ Yes – Necessary If You Want:
+- **Automatic builds** on every Git push (recommended for CI/CD)
+- **Faster response time** – builds are triggered instantly
+- **Less load** on Jenkins (no repeated polling needed)
+
+### 🔁 Summary: Webhook vs Polling
+
+| Use Case                             | Is Webhook Needed? |
+|--------------------------------------|---------------------|
+| Triggering builds manually           | ❌ No                |
+| Using SCM polling in Jenkins         | ❌ No                |
+| Want automatic builds on Git push    | ✅ Yes               |
+| Running CI/CD in real-time           | ✅ Yes               |
+| Jenkins is not publicly accessible   | ❌ No (or use polling/ngrok) |
+
+---
+---
+## 🛠️ Should You Build First or Create the Webhook First in Jenkins?
+Step: Add the GitHub Webhook
+In GitHub: go to your repository > settings > webhooks > add webhook > Payload URL > http://<your_jenkin_server_ip>/github-webhook/ > content type > application/json > ✅ Select "Just the Push event" >click Add Webhook
+
+### Pipeline
+In jenkins:
+create new item > name > click on pipeline > scroll > in trigger- click on GitHub hook trigger for GITScm polling > scroll> pipeline > Defination > Pipeline script from SCM > select scm to Git > add url https://github.com/your_githubusername/repo_name > Add credential > Branch Specifier > chech in github -main or master > apply/save > build now > check in console
+
+### dont forgot to add:port😄
+chech the delivery
+now jenkins will auto-triggers when you push to GitHub
+
+---
 
 
 ✅ Final Verification
