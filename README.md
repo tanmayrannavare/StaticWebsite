@@ -50,6 +50,13 @@ GitHub → Jenkins (EC2 in VPC) → S3 Bucket → CloudFront → End Users
    - Set **Default Root Object** → `index.html`
    - Click **Save changes**
 9. Open your site using the **CloudFront domain name** (e.g., `https://dxxxxx.cloudfront.net`)
+10. Invalidate the cache for the updated files.  
+Steps:
+Go to AWS Console → CloudFront > Select your distribution > Go to Invalidations → Create Invalidation > Enter the path(s) of the updated files,
+e.g.:
+```
+/*
+```
 
 ---
 
